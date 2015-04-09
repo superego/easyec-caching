@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:caching="http://easyec.googlecode.com/schema/caching"
+       xmlns:cache="http://www.springframework.org/schema/cache"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://easyec.googlecode.com/schema/caching http://easyec.googlecode.com/schema/caching/cache-1.1.xsd
+       http://www.springframework.org/schema/cache http://www.springframework.org/schema/cache/spring-cache.xsd">
+
+    <caching:service id="cacheService">
+        <caching:simple>
+            <caching:static-cache>
+                <caching:cache name="globalCache"/>
+                <caching:cache name="mybatisCache"/>
+            </caching:static-cache>
+        </caching:simple>
+    </caching:service>
+
+    <cache:annotation-driven/>
+
+    <bean id="simpleService"
+          class="com.googlecode.easyec.test.service.impl.SimpleServiceImpl"
+            />
+</beans>

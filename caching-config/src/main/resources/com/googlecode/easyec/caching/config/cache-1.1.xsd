@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns="http://easyec.googlecode.com/schema/caching"
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            xmlns:beans="http://www.springframework.org/schema/beans"
+            targetNamespace="http://easyec.googlecode.com/schema/caching"
+            elementFormDefault="qualified"
+            attributeFormDefault="unqualified">
+
+    <xsd:import namespace="http://www.springframework.org/schema/beans"/>
+
+    <xsd:element name="service" type="caching-service.types"/>
+
+    <xsd:complexType name="caching-service.types">
+        <xsd:complexContent>
+            <xsd:extension base="beans:identifiedType">
+                <xsd:group ref="cache-service-sub.group"/>
+                <xsd:attributeGroup ref="cache-service.attributes"/>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+
+    <xsd:attributeGroup name="cache-service.attributes">
+        <xsd:attribute name="cache-manager" type="xsd:string" default="cacheManager"/>
+    </xsd:attributeGroup>
+
+    <xsd:group name="cache-service-sub.group">
+        <xsd:sequence>
+            <xsd:element ref="beans:description" minOccurs="0"/>
+            <xsd:choice minOccurs="1" maxOccurs="1">
+                <xsd:element name="noOpCache">
+                    <xsd:complexType/>
+                </xsd:element>
+                <xsd:element name="ehcache">
+                    <xsd:complexType>
+                        <xsd:attribute name="shared" type="xsd:boolean" default="false"/>
+                        <xsd:attribute name="transactionAware" type="xsd:boolean" default="false"/>
+                        <xsd:attribute name="configLocation" type="xsd:string" default="classpath:ehcache.xml"/>
+                    </xsd:complexType>
+                </xsd:element>
+                <xsd:element name="simple">
+                    <xsd:complexType>
+                        <xsd:choice maxOccurs="1">
+                            <xsd:element name="dynamic-cache">
+                                <xsd:complexType/>
+                            </xsd:element>
+                            <xsd:element name="static-cache">
+                                <xsd:complexType>
+                                    <xsd:sequence minOccurs="1" maxOccurs="unbounded">
+                                        <xsd:element name="cache">
+                                            <xsd:complexType>
+                                                <xsd:attribute name="name" use="required" type="xsd:ID"/>
+                                            </xsd:complexType>
+                                        </xsd:element>
+                                    </xsd:sequence>
+                                </xsd:complexType>
+                            </xsd:element>
+                        </xsd:choice>
+                    </xsd:complexType>
+                </xsd:element>
+            </xsd:choice>
+        </xsd:sequence>
+    </xsd:group>
+</xsd:schema>

@@ -1,0 +1,2 @@
+http\://easyec.googlecode.com/schema/caching/cache-1.1.xsd=com/googlecode/easyec/caching/config/cache-1.1.xsd
+http\://easyec.googlecode.com/schema/caching/cache.xsd=com/googlecode/easyec/caching/config/cache-1.1.xsd
