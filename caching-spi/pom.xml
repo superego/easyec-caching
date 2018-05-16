@@ -3,7 +3,7 @@
     <parent>
         <artifactId>caching</artifactId>
         <groupId>com.googlecode.easyec</groupId>
-        <version>0.8.1-SNAPSHOT</version>
+        <version>0.8.1.1-SNAPSHOT</version>
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
@@ -20,13 +20,13 @@
         <dependency>
             <groupId>org.aspectj</groupId>
             <artifactId>aspectjrt</artifactId>
-            <version>1.8.13</version>
+            <version>1.9.1</version>
         </dependency>
 
         <dependency>
             <groupId>org.aspectj</groupId>
             <artifactId>aspectjweaver</artifactId>
-            <version>1.8.13</version>
+            <version>1.9.1</version>
         </dependency>
     </dependencies>
 
