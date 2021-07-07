@@ -27,9 +27,9 @@
     </licenses>
 
     <scm>
-        <developerConnection>scm:git:https://github.com/superego/easyec.git</developerConnection>
-        <connection>scm:git:https://github.com/superego/easyec.git</connection>
-        <url>https://github.com/superego/easyec.git</url>
+        <developerConnection>scm:git:https://github.com/superego/easyec-caching.git</developerConnection>
+        <connection>scm:git:https://github.com/superego/easyec-caching.git</connection>
+        <url>https://github.com/superego/easyec-caching.git</url>
     </scm>
 
     <developers>
