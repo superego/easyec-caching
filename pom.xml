@@ -1,9 +1,8 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.googlecode.easyec</groupId>
     <artifactId>caching</artifactId>
-    <version>0.8.2-SNAPSHOT</version>
+    <version>0.8.2</version>
     <modules>
         <module>caching-spi</module>
         <module>caching-ehcache</module>
@@ -30,7 +29,8 @@
         <developerConnection>scm:git:https://github.com/superego/easyec-caching.git</developerConnection>
         <connection>scm:git:https://github.com/superego/easyec-caching.git</connection>
         <url>https://github.com/superego/easyec-caching.git</url>
-    </scm>
+      <tag>caching-0.8.2</tag>
+  </scm>
 
     <developers>
         <developer>
